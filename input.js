@@ -5,6 +5,14 @@ const handleUserInput = function (data) {
     process.exit();
   }
 
+  if (data === "p") {
+    connection.write("Say: ZOOM!");
+  }
+
+  if (data === "l") {
+    connection.write("Say: Coming in HOT!");
+  }
+
   if (data === "w") {
     connection.write("Move: up");
   }
