@@ -10,9 +10,17 @@ const connect = function () {
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
+  // const snakeMovements = ["Move: up", "Move: left", "Move: down", "Move: left", "Move: down", "Move: right"];
+  let moveTimer = 50;
+
   conn.on("connect", () => {
-    console.log("Connection Successful!");
     conn.write("Name: SSS");
+    
+    for (const move of snakeMovements) {
+      setInterval(() => {
+        conn.write(move);
+      }, moveTimer += 500)
+    }
   });
 
 
